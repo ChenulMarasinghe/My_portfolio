@@ -208,6 +208,52 @@ textarea {
   padding: 20px;
 }
 
+/* Keep project cards aligned while letting longer summaries scroll above the tech tags. */
+.showcase-project-card {
+  height: 700px;
+  min-height: 0;
+}
+
+.showcase-project-cover {
+  flex: 0 0 180px;
+}
+
+.showcase-project-body {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.showcase-project-description {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: rgba(30, 41, 59, 0.52);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 10px;
+  padding: 0.75rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(159, 176, 255, 0.55) rgba(255, 255, 255, 0.06);
+}
+
+.showcase-project-tech {
+  padding-top: 0.75rem;
+}
+
+.showcase-project-description::-webkit-scrollbar {
+  width: 6px;
+}
+
+.showcase-project-description::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(159, 176, 255, 0.55);
+}
+
+.showcase-project-description:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .project-card h3 {
   margin-bottom: 10px;
 }

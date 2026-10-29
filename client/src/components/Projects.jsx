@@ -176,7 +176,7 @@ export default function Projects() {
             (() => {
               const coverSrc = p.cover ? getProjectCover(p.cover) : null;
               return (
-            <div key={p.title} style={{ 
+            <div key={p.title} className="showcase-project-card" style={{ 
               borderRadius: '16px', 
               overflow: 'hidden', 
               background: 'rgba(17, 24, 39, 0.92)', 
@@ -195,7 +195,7 @@ export default function Projects() {
               e.currentTarget.style.boxShadow = 'none';
             }}
             >
-              <div style={{ 
+              <div className="showcase-project-cover" style={{ 
                 height: '200px',
                 display: 'flex',
                 alignItems: 'center',
@@ -214,7 +214,7 @@ export default function Projects() {
                 )}
               </div>
             
-              <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+              <div className="showcase-project-body" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.8rem' }}>
                   <h3 style={{ margin: 0, fontSize: '1.1rem', flex: 1, color: '#f8fafc' }}>{p.title}</h3>
                   <span style={{ background: 'rgba(79, 134, 255, 0.16)', color: '#9fb0ff', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', whiteSpace: 'nowrap', marginLeft: '0.5rem', border: '1px solid rgba(79, 134, 255, 0.22)' }}>
@@ -222,34 +222,36 @@ export default function Projects() {
                   </span>
                 </div>
               
-                <p style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.65, marginBottom: '0.85rem' }}>
-                  {p.desc}
-                </p>
+                <div className="showcase-project-description" tabIndex={0} aria-label={`${p.title} description and highlights`}>
+                  <p style={{ fontSize: '0.92rem', color: '#cbd5e1', lineHeight: 1.65, margin: '0 0 0.85rem' }}>
+                    {p.desc}
+                  </p>
 
-                {p.highlights?.length ? (
-                  <ul style={{ margin: '0 0 1rem', paddingLeft: '1.15rem', color: '#e2e8f0', lineHeight: 1.7, fontSize: '0.9rem' }}>
-                    {p.highlights.map((item) => (
-                      <li key={item} style={{ marginBottom: '0.45rem' }}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
+                  {p.highlights?.length ? (
+                    <ul style={{ margin: '0 0 1rem', paddingLeft: '1.15rem', color: '#e2e8f0', lineHeight: 1.7, fontSize: '0.9rem' }}>
+                      {p.highlights.map((item) => (
+                        <li key={item} style={{ marginBottom: '0.45rem' }}>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </div>
               
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.55rem', marginBottom: '1rem' }}>
+                <div className="showcase-project-tech" style={{ display: 'flex', flexWrap: 'wrap', gap: '0.55rem', marginBottom: '1rem' }}>
                   {p.tech.map(t => (
-                    <span key={t} style={{ 
+                    <span key={t} className="showcase-project-tech-badge" style={{ 
                       background: 'rgba(51, 65, 85, 0.74)', 
                       color: '#e2e8f0', 
-                      padding: '0.45rem 0.75rem', 
+                      padding: '0.28rem 0.5rem', 
                       borderRadius: '999px', 
-                      fontSize: '0.78rem',
+                      fontSize: '0.68rem',
                       border: '1px solid rgba(148, 163, 184, 0.14)',
                       display: 'inline-flex',
                       alignItems: 'center',
-                      gap: '0.4rem'
+                      gap: '0.25rem'
                     }}>
-                      <TechIcon name={t} size={16} />
+                      <TechIcon name={t} size={12} />
                       {t}
                     </span>
                   ))}
