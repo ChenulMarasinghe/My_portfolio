@@ -30,7 +30,7 @@ import {
   SiOpenapiinitiative,
   SiGmail,
 } from 'react-icons/si';
-import { SiReactrouter, SiVercel, SiRender } from 'react-icons/si';
+import { SiReactrouter, SiVercel, SiRender, SiExpo, SiTypescript } from 'react-icons/si';
 import { FaAws, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { IoSend } from 'react-icons/io5';
 import { VscVscode } from 'react-icons/vsc';
@@ -167,7 +167,26 @@ export function TechIcon({ name, size = 26, style = {} }) {
 
     case 'react':
     case 'reactjs':
+    case 'reactnative':
       return wrap(<SiReact size={size} color="#61DAFB" style={style} />);
+
+    case 'typescript':
+      return wrap(<SiTypescript size={size} color="#3178C6" style={style} />);
+
+    case 'expo':
+    case 'eas':
+      return wrap(<SiExpo size={size} color="#ffffff" style={style} />);
+
+    case 'firestore':
+      return wrap(<SiFirebase size={size} color="#FFCA28" style={style} />);
+
+    case 'asyncstorage':
+      return wrap(
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" style={style} xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6.5 12 3l8 3.5-8 3.5-8-3.5Z" fill="#8B9BFF" />
+          <path d="M4 10.5 12 14l8-3.5M4 14.5 12 18l8-3.5M4 6.5v11L12 21l8-3.5v-11" stroke="#AEB9FF" strokeWidth="1.7" strokeLinejoin="round" />
+        </svg>
+      );
 
     case 'html5':
     case 'html':

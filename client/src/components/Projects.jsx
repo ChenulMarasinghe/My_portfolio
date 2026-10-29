@@ -1,6 +1,6 @@
-import { TechIcon, ProjectLogo } from './Icons';
+﻿import { TechIcon, ProjectLogo } from './Icons';
 
-const projectCovers = import.meta.glob('../images/project_cover_image/*.png', { eager: true, import: 'default' });
+const projectCovers = import.meta.glob('../images/project_cover_image/*.{png,svg}', { eager: true, import: 'default' });
 
 function getProjectCover(fileName) {
   const key = Object.keys(projectCovers).find((path) => path.endsWith(`/${fileName}`));
@@ -8,6 +8,22 @@ function getProjectCover(fileName) {
 }
 
 const projects = [
+  {
+    title: 'OPD Link - OPD Appointment & Queue Management App',
+    year: '2026',
+    cover: 'OPD Link.svg',
+    desc: 'Cross-platform healthcare app for booking outpatient appointments, viewing upcoming visits, and tracking clinic queues.',
+    tech: ['TypeScript', 'React Native', 'Expo', 'Firebase', 'Firestore', 'AsyncStorage', 'EAS'],
+    highlights: [
+      'Built patient flows for appointments, queue status, upcoming visits, and clinic updates.',
+      'Developed admin tools for doctors, appointments, queues, and IT maintenance and error monitoring dashboards.',
+      'Used Firebase Authentication and Firestore for accounts and app data, with AsyncStorage for local persistence.',
+      'Shipped Android preview APKs and iOS/Android production builds through Expo Application Services, and published a web version.',
+    ],
+    install: 'https://expo.dev/accounts/chenulmarasinghes-team/projects/opd-link-mobile-app/builds/db0bdf3b-c32d-4eb2-81ed-a1410168d846',
+    live: 'https://opd-link-mobile-app--7hbo6ey1d1.expo.app',
+    github: 'https://github.com/ChenulMarasinghe/opd-link-mobile-app.git',
+  },
   {
     title: "Cake n' Smile - Custom Cake Ordering Platform",
     year: '2026',
@@ -22,6 +38,7 @@ const projects = [
       'Optimized the site for mobile use, fast performance, and search engine visibility.',
     ],
     github: 'https://github.com/ChenulMarasinghe',
+    live: 'https://cakensmile.vercel.app/',
   },
   {
     title: 'UniConnect - Guest Lecturer & Lost and Found Platform',
@@ -238,10 +255,12 @@ export default function Projects() {
                   ))}
                 </div>
               
-                <div style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
-                  <a href={p.github} target="_blank" rel="noreferrer" style={{ color: '#9fb0ff', textDecoration: 'none', fontSize: '0.92rem', fontWeight: 700 }}>
-                    GitHub →
-                  </a>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: 'auto' }}>
+                  {p.install && <a href={p.install} target="_blank" rel="noreferrer" style={{ color: '#9fb0ff', textDecoration: 'none', fontSize: '0.92rem', fontWeight: 700 }}>Install app</a>}
+                  {p.live && <a href={p.live} target="_blank" rel="noreferrer" style={{ color: '#9fb0ff', textDecoration: 'none', fontSize: '0.92rem', fontWeight: 700 }}>Live site</a>}
+                  {p.github && <a href={p.github} target="_blank" rel="noreferrer" style={{ color: '#9fb0ff', textDecoration: 'none', fontSize: '0.92rem', fontWeight: 700 }}>
+                    GitHub
+                  </a>}
                 </div>
               </div>
             </div>

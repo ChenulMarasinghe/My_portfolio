@@ -7,6 +7,7 @@ const skillGroups = [
     title: 'Programming Languages',
     items: [
       { name: 'JavaScript', percent: 85 },
+      { name: 'TypeScript', percent: 80 },
       { name: 'Python', percent: 75 },
       { name: 'Java', percent: 70 },
       { name: 'Kotlin', percent: 70 },
@@ -25,6 +26,15 @@ const skillGroups = [
     ],
   },
   {
+    title: 'Mobile Development',
+    items: [
+      { name: 'React Native', percent: 80 },
+      { name: 'Expo', percent: 80 },
+      { name: 'AsyncStorage', percent: 75 },
+      { name: 'EAS', percent: 75 },
+    ],
+  },
+  {
     title: 'Backend',
     items: [
       { name: 'Node.js', percent: 85 },
@@ -40,6 +50,7 @@ const skillGroups = [
       { name: 'MongoDB', percent: 80 },
       { name: 'MySQL', percent: 80 },
       { name: 'PostgreSQL', percent: 60 },
+      { name: 'Firestore', percent: 80 },
     ],
   },
   {
