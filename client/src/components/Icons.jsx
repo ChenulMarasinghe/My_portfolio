@@ -162,6 +162,16 @@ export function TechIcon({ name, size = 26, style = {} }) {
     case 'csharp':
       return wrap(<SiSharp size={size} color="#512BD4" style={style} />);
 
+    case 'flutter':
+      return wrap(
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" style={style} xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.9 2.5H9.4L3 8.9l4.7 4.7L20.5.8H11l-4.3 4.3" fill="#54C5F8" />
+          <path d="m7.7 13.6 4.7 4.7 4.7-4.7-4.7-4.7-4.7 4.7Z" fill="#01579B" />
+          <path d="m12.4 18.3 3.1 3.1 4.7-4.7-3.1-3.1-4.7 4.7Z" fill="#29B6F6" />
+          <path d="m7.7 13.6 4.7 4.7 3.1-3.1-4.7-4.7-3.1 3.1Z" fill="#039BE5" />
+        </svg>
+      );
+
     case 'php':
       return wrap(<SiPhp size={size} color="#777BB4" style={style} />);
 
@@ -227,6 +237,15 @@ export function TechIcon({ name, size = 26, style = {} }) {
     case 'postgresql':
     case 'postgres':
       return wrap(<SiPostgresql size={size} color="#4169E1" style={style} />);
+
+    case 'oracledatabase':
+    case 'oracle':
+      return wrap(
+        <svg width={size} height={size} viewBox="0 0 48 24" fill="none" style={style} xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Oracle Database">
+          <rect x="1.5" y="2.5" width="45" height="19" rx="9.5" stroke="#F80000" strokeWidth="2.5" />
+          <text x="24" y="15.7" textAnchor="middle" fill="#F80000" fontFamily="Arial, sans-serif" fontSize="9.2" fontWeight="700" letterSpacing="0.4">ORACLE</text>
+        </svg>
+      );
 
     case 'git':
       return wrap(<SiGit size={size} color="#F05032" style={style} />);
